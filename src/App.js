@@ -1,5 +1,6 @@
 import './App.css';
 import Card from './components/card';
+import Contador from './Contador';
 import InputComponent from './Input';
 
 
@@ -31,6 +32,9 @@ function App() {
       </Card>
       
       <InputComponent />
+
+      <Contador/>
+      
     </div>
   );
 }
