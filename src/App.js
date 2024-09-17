@@ -2,6 +2,7 @@ import './App.css';
 import Card from './components/card';
 import Contador from './Contador';
 import InputComponent from './Input';
+import ListaTareas from './ListaTareas';
 import MostrarTexto from './MostrarTexto';
 
 
@@ -37,6 +38,9 @@ function App() {
       <Contador/>
 
       <MostrarTexto/>
+
+      <ListaTareas/>
+
     </div>
   );
 }
