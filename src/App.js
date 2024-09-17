@@ -1,6 +1,7 @@
 import './App.css';
 import Card from './components/card';
 import Contador from './Contador';
+import ContadorTa9 from './ContadorTa9';
 import InputComponent from './Input';
 import ListaTareas from './ListaTareas';
 import MostrarTexto from './MostrarTexto';
@@ -40,6 +41,8 @@ function App() {
       <MostrarTexto/>
 
       <ListaTareas/>
+
+      <ContadorTa9/>
 
     </div>
   );
