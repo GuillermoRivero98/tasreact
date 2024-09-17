@@ -2,6 +2,7 @@ import './App.css';
 import Card from './components/card';
 import Contador from './Contador';
 import InputComponent from './Input';
+import MostrarTexto from './MostrarTexto';
 
 
 function App() {
@@ -34,7 +35,8 @@ function App() {
       <InputComponent />
 
       <Contador/>
-      
+
+      <MostrarTexto/>
     </div>
   );
 }
