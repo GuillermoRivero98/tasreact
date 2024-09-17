@@ -1,13 +1,10 @@
 import React from "react";
+import "./Card.css";
 
-function Card({ titulo, descrpcion, pesonaAsignada, fechaInicio, fechaFin }) {
+function Card({ children }) {
     return (
         <div className="card">
-            <h2>{titulo}</h2>
-            <p>{descrpcion}</p>
-            <p><strong>Asignado a:</strong> {pesonaAsignada}</p>
-            <p><strong>Fecha de inicio:</strong> {fechaInicio}</p>
-            <p><strong>Fecha de fin:</strong> {fechaFin}</p>
+            {children}
         </div>
     );
 }

@@ -1,17 +1,16 @@
 import './App.css';
 import Card from './components/card';
+import InputComponent from './Input';
 
 
 function App() {
   return (
     <div className="App">
-      <Card
-        titulo="Tarea 1"
-        descrpcion="Descripción de la tarea 1"
-        pesonaAsignada="Juan Perez"
-        fechaInicio="2021-01-01"
-        fechaFin="2021-01-15"
-      />
+      <Card>
+          <h2>Card Title</h2>
+          <p>Card Description</p>
+      </Card>
+      <InputComponent />
     </div>
   );
 }
