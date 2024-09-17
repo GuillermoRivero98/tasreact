@@ -13,9 +13,9 @@ function Usuarios() {
         <div>
             <h1>Usuarios</h1>
             <ul>
-                {usuarios.map((u, index) => (
+                {usuarios.map((u) => (
                     <li key={usuarios.id}>
-                        {usuarios.name} - {usuarios.email}
+                        {u.name} - {u.email}
                     </li>
                 ))}
             </ul>
