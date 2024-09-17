@@ -5,6 +5,7 @@ import ContadorTa9 from './ContadorTa9';
 import InputComponent from './Input';
 import ListaTareas from './ListaTareas';
 import MostrarTexto from './MostrarTexto';
+import Temporizador from './Temporizador';
 import Usuarios from './Usuarios';
 
 
@@ -46,6 +47,8 @@ function App() {
       <ContadorTa9/>
 
       <Usuarios/>
+
+      <Temporizador/> 
 
     </div>
   );
