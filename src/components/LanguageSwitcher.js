@@ -1,15 +1,17 @@
-import React, { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
+import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const LanguageSwitcher = () => {
-  const { language, setLanguage } = useContext(LanguageContext);
+  const { language, setLanguage } = useLanguage();
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'es' : 'en');
+  };
 
   return (
-    <div>
-      <button onClick={() => setLanguage(language === "es" ? "en" : "es")}>
-        Cambiar a {language === "es" ? "Inglés" : "Español"}
-      </button>
-    </div>
+    <button onClick={toggleLanguage}>
+      Switch to {language === 'en' ? 'Spanish' : 'English'}
+    </button>
   );
 };
 

@@ -14,14 +14,14 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ProductDetail from './pages/ProductDetail';
 import PrivateRoute from './components/PrivateRoute';
-import { useAuth } from './context/UserContext';
-import { useTheme } from './context/ThemeContext';
-import { useLanguage } from './context/LanguageContext';
+import { UserProvider, useAuth } from './context/UserContext';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import ThemeToggle from './components/ThemeSwitcher';
 import LanguageToggle from './components/LanguageSwitcher';
 import UpdateUser from './components/UpdateUser';
 
-export default function App() {
+function AppContent() {
   const { isAuthenticated } = useAuth();
   const { theme } = useTheme();
   const { language } = useLanguage();
@@ -30,28 +30,28 @@ export default function App() {
     <Router>
       <div className={`App ${theme}`}>
         <h1>TA 1</h1>
-        <CardTA1 
-          title="Card Title 1" 
-          description="Card Description 1" 
-          assignedTo="Juan" 
-          startDate="12/12/2021" 
+        <CardTA1
+          title="Card Title 1"
+          description="Card Description 1"
+          assignedTo="Juan"
+          startDate="12/12/2021"
           endDate="12/12/2021"
         />
-        <CardTA1 
-          title="Card Title 2" 
-          description="Card Description 2" 
-          assignedTo="Pedro" 
-          startDate="13/12/2021" 
+        <CardTA1
+          title="Card Title 2"
+          description="Card Description 2"
+          assignedTo="Pedro"
+          startDate="13/12/2021"
           endDate="14/12/2021"
         />
-        <CardTA1 
-          title="Card Title 3" 
-          description="Card Description 3" 
-          assignedTo="Maria" 
-          startDate="15/12/2021" 
+        <CardTA1
+          title="Card Title 3"
+          description="Card Description 3"
+          assignedTo="Maria"
+          startDate="15/12/2021"
           endDate="16/12/2021"
         />
-        
+
         <h1>TA 2</h1>
         <Card>
           <h2>Card Title</h2>
@@ -122,16 +122,28 @@ export default function App() {
 
         <h1>TA 18 - Rutas protegidas</h1>
         <Routes>
-          <Route 
-            path="/private" 
+          <Route
+            path="/private"
             element={
               <PrivateRoute isAuthenticated={isAuthenticated}>
                 <div>This is a protected route</div>
               </PrivateRoute>
-            } 
+            }
           />
         </Routes>
       </div>
     </Router>
+  );
+}
+
+export default function App() {
+  return (
+    <UserProvider>
+      <ThemeProvider>
+        <LanguageProvider>
+          <AppContent />
+        </LanguageProvider>
+      </ThemeProvider>
+    </UserProvider>
   );
 }
